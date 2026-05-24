@@ -6,7 +6,6 @@
     <title>Para Paulina, de Angel ✨</title>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Mismo CSS que antes, resumido por brevedad pero completo */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { margin: 0; min-height: 100vh; background: #0a0206; font-family: 'Poppins', sans-serif; overflow-x: hidden; color: #ffebf0; }
         canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; display: block; z-index: 0; pointer-events: none; }
@@ -100,10 +99,7 @@
     <div class="intro" id="intro">
         <div class="scene-wrap">
             <svg class="scene-svg" viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <radialGradient id="glow1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff3060" stop-opacity="0.7"/><stop offset="100%" stop-color="#ff3060" stop-opacity="0"/></radialGradient>
-                    <filter id="blur1"><feGaussianBlur stdDeviation="6"/></filter><filter id="blur3"><feGaussianBlur stdDeviation="12"/></filter>
-                </defs>
+                <defs><radialGradient id="glow1" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff3060" stop-opacity="0.7"/><stop offset="100%" stop-color="#ff3060" stop-opacity="0"/></radialGradient><filter id="blur1"><feGaussianBlur stdDeviation="6"/></filter><filter id="blur3"><feGaussianBlur stdDeviation="12"/></filter></defs>
                 <ellipse cx="160" cy="180" rx="140" ry="130" fill="url(#glow1)" filter="url(#blur3)" opacity="0.5"/>
                 <ellipse cx="30" cy="318" rx="9" ry="5" fill="#cc1040" opacity="0.7" transform="rotate(-20,30,318)"/>
                 <line x1="160" y1="200" x2="160" y2="295" stroke="#2d6e2d" stroke-width="3" stroke-linecap="round"/>
@@ -114,64 +110,19 @@
                 <circle cx="200" cy="115" r="1.5" fill="#ffeeaa" opacity="0.8"><animate attributeName="opacity" values="0.8;0.15;0.8" dur="2.2s" repeatCount="indefinite"/></circle>
             </svg>
         </div>
-        <div class="i-text">
-            <div class="i-dear">Esta carta es para</div>
-            <div class="i-name">Paulina</div>
-            <div class="i-from">de Angel, con todo su amor</div>
-        </div>
+        <div class="i-text"><div class="i-dear">Esta carta es para</div><div class="i-name">Paulina</div><div class="i-from">de Angel, con todo su amor</div></div>
         <div class="i-sep"></div>
         <button class="i-btn" id="openLetterBtn">Abrir mi carta ❤️</button>
     </div>
 
     <!-- CARTA PRINCIPAL -->
     <div class="page" id="page">
-        <div class="hdr">
-            <div class="hdr-scene">
-                <svg viewBox="0 0 280 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 0 20px rgba(255,40,70,0.28))">
-                    <defs><radialGradient id="g2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff2050" stop-opacity="0.5"/><stop offset="100%" stop-color="#ff2050" stop-opacity="0"/></radialGradient></defs>
-                    <ellipse cx="140" cy="150" rx="120" ry="110" fill="url(#g2)" filter="url(#b3)" opacity="0.45"/>
-                    <ellipse cx="140" cy="144" rx="25" ry="19" fill="#cc0030" opacity="0.9"/>
-                    <ellipse cx="129" cy="132" rx="18" ry="14" fill="#dd1040" opacity="0.92" transform="rotate(-30,129,132)"/>
-                    <ellipse cx="151" cy="132" rx="18" ry="14" fill="#dd1040" opacity="0.92" transform="rotate(30,151,132)"/>
-                    <circle cx="104" cy="100" r="1.8" fill="#ffeeaa" opacity="0.9"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite"/></circle>
-                </svg>
-            </div>
-            <div class="h-para">Para</div>
-            <div class="h-name">Paulina</div>
-            <div class="h-from">de Angel ❤️</div>
-        </div>
+        <div class="hdr"><div class="hdr-scene"><svg viewBox="0 0 280 290" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:100%;filter:drop-shadow(0 0 20px rgba(255,40,70,0.28))"><defs><radialGradient id="g2" cx="50%" cy="50%" r="50%"><stop offset="0%" stop-color="#ff2050" stop-opacity="0.5"/><stop offset="100%" stop-color="#ff2050" stop-opacity="0"/></radialGradient></defs><ellipse cx="140" cy="150" rx="120" ry="110" fill="url(#g2)" filter="url(#b3)" opacity="0.45"/><ellipse cx="140" cy="144" rx="25" ry="19" fill="#cc0030" opacity="0.9"/><ellipse cx="129" cy="132" rx="18" ry="14" fill="#dd1040" opacity="0.92" transform="rotate(-30,129,132)"/><ellipse cx="151" cy="132" rx="18" ry="14" fill="#dd1040" opacity="0.92" transform="rotate(30,151,132)"/><circle cx="104" cy="100" r="1.8" fill="#ffeeaa" opacity="0.9"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.8s" repeatCount="indefinite"/></circle></svg></div><div class="h-para">Para</div><div class="h-name">Paulina</div><div class="h-from">de Angel ❤️</div></div>
         <div class="divrow"><div class="dl"></div><div class="dc">✦ ❤️ ✦</div><div class="dl"></div></div>
 
-        <!-- GALERÍA (10 fotos) -->
-        <div class="glass">
-            <span class="slabel">Nuestros momentos 🌸</span>
-            <div class="pgrid" id="grid"></div>
-            <p class="pnote">✨ Toca cada foto para verla en grande. Si quieres cambiarla, usa la ✕ ✨</p>
-        </div>
+        <div class="glass"><span class="slabel">Nuestros momentos 🌸</span><div class="pgrid" id="grid"></div><p class="pnote">✨ Toca cada foto para verla en grande. Si quieres cambiarla, usa la ✕ ✨</p></div>
 
-        <!-- CARTA DE AMOR -->
-        <div class="glass">
-            <span class="saludo">Paulina, mi amor…</span>
-            <div class="body">
-                <p>Se que vas a ver este mensaje y que tal vez no me vayas a responder. Se que probablemente ni siquiera me vayas a dirigir la palabra. Y aun asi, <span class="em">necesito que sepas lo que siento.</span></p>
-                <p>Se que estas pasando por momentos muy difíciles. Y se que yo, como tu novio, no he estado todo lo que debería estar. Se que es difícil sobrellevar la distancia, esperar un abrazo, que te invite a salir, celebrar nuestro aniversario juntos… <span class="str">y eso me duele porque te mereces todo eso y mas.</span></p>
-                <div class="bq">"No te digo nada a los demas. No les cuento nada. Porque siempre dañan todo. Siempre hay rumores, siempre hay falsos. Lo nuestro es nuestro, y asi va a quedarse."</div>
-                <p>Pido perdon. Se que eso no alcanza. Se que ya te he decepcionado bastante. Pero quiero que sepas que si en algun momento dije o hice algo que no debí, <span class="em">lo lamento desde lo mas profundo de mi corazon.</span></p>
-                <p>Y aunque se que vas a ver esto y no me vas a contestar… <span class="str">por mas difícil que sea lo que estemos pasando, siempre voy a estar para ti.</span> No fisicamente tal vez, pero siempre presente. Siempre.</p>
-                <div class="bq">"Tu me dijiste que eres una chica problema, que siempre vas a querer terminar. Y yo te di mi promesa: nunca me voy a ir. Pase lo que pase. Pese a todo."</div>
-                <p>Quiero luchar por lo nuestro. Quiero que lo hagamos bien, pese a todos los obstáculos, las dificultades, nuestros miedos, nuestros problemas. <span class="em">Quiero que nos ayudemos mutuamente.</span> Como pareja de verdad.</p>
-                <p>Soy solo un muchacho. No tengo todo. Pero <span class="str">lo que si tengo es mi amor por ti. Y eso no se va a ir a ningún lado.</span> Nunca.</p>
-                <div class="bq">"Pese a todo, los obstáculos, la distancia, el silencio… siempre voy a luchar por nosotros. Siempre. Porque te amo."</div>
-                <p class="em" style="text-align:center;font-size:1.3rem;display:block;margin:1.5rem 0;">Te amo, Paulina. 🫂❤️</p>
-            </div>
-            <div class="hrow">
-                <span class="hb">❤️</span><span class="hb">🩷</span><span class="hb">❤️</span><span class="hb">🩷</span><span class="hb">❤️</span>
-            </div>
-            <div class="firma-box">
-                <div class="fde">Con todo mi amor, siempre</div>
-                <div class="fname">Angel ❤️</div>
-            </div>
-        </div>
+        <div class="glass"><span class="saludo">Paulina, mi amor…</span><div class="body"><p>Se que vas a ver este mensaje y que tal vez no me vayas a responder. Se que probablemente ni siquiera me vayas a dirigir la palabra. Y aun asi, <span class="em">necesito que sepas lo que siento.</span></p><p>Se que estas pasando por momentos muy difíciles. Y se que yo, como tu novio, no he estado todo lo que debería estar. Se que es difícil sobrellevar la distancia, esperar un abrazo, que te invite a salir, celebrar nuestro aniversario juntos… <span class="str">y eso me duele porque te mereces todo eso y mas.</span></p><div class="bq">"No te digo nada a los demas. No les cuento nada. Porque siempre dañan todo. Siempre hay rumores, siempre hay falsos. Lo nuestro es nuestro, y asi va a quedarse."</div><p>Pido perdon. Se que eso no alcanza. Se que ya te he decepcionado bastante. Pero quiero que sepas que si en algun momento dije o hice algo que no debí, <span class="em">lo lamento desde lo mas profundo de mi corazon.</span></p><p>Y aunque se que vas a ver esto y no me vas a contestar… <span class="str">por mas difícil que sea lo que estemos pasando, siempre voy a estar para ti.</span> No fisicamente tal vez, pero siempre presente. Siempre.</p><div class="bq">"Tu me dijiste que eres una chica problema, que siempre vas a querer terminar. Y yo te di mi promesa: nunca me voy a ir. Pase lo que pase. Pese a todo."</div><p>Quiero luchar por lo nuestro. Quiero que lo hagamos bien, pese a todos los obstáculos, las dificultades, nuestros miedos, nuestros problemas. <span class="em">Quiero que nos ayudemos mutuamente.</span> Como pareja de verdad.</p><p>Soy solo un muchacho. No tengo todo. Pero <span class="str">lo que si tengo es mi amor por ti. Y eso no se va a ir a ningún lado.</span> Nunca.</p><div class="bq">"Pese a todo, los obstáculos, la distancia, el silencio… siempre voy a luchar por nosotros. Siempre. Porque te amo."</div><p class="em" style="text-align:center;font-size:1.3rem;display:block;margin:1.5rem 0;">Te amo, Paulina. 🫂❤️</p></div><div class="hrow"><span class="hb">❤️</span><span class="hb">🩷</span><span class="hb">❤️</span><span class="hb">🩷</span><span class="hb">❤️</span></div><div class="firma-box"><div class="fde">Con todo mi amor, siempre</div><div class="fname">Angel ❤️</div></div></div>
 
         <div class="final">Paulina, eres mi todo 🌹</div>
         <div class="divrow"><div class="dl"></div><div class="dc">✦</div><div class="dl"></div></div>
@@ -179,62 +130,21 @@
     </div>
 
     <!-- Modal ramo -->
-    <div id="bouquetModal" class="bouquet-modal">
-        <div class="bouquet-card">
-            <div class="bouquet-title">🌷 Para ti, mi amor 🌷</div>
-            <div class="bouquet-sub">Tulipanes rosados que florecen por ti</div>
-            <div class="bouquet-svg">
-                <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                    <defs>
-                        <linearGradient id="tulipPink1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ff9ebf"/><stop offset="100%" stop-color="#e64b6c"/></linearGradient>
-                        <linearGradient id="tulipPink2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffb8d0"/><stop offset="100%" stop-color="#cc3b5e"/></linearGradient>
-                        <linearGradient id="tulipPink3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ff7a9e"/><stop offset="100%" stop-color="#b8003a"/></linearGradient>
-                    </defs>
-                    <line x1="200" y1="350" x2="200" y2="270" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="250" y1="350" x2="250" y2="260" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="300" y1="350" x2="300" y2="275" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="165" y1="350" x2="165" y2="280" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="335" y1="350" x2="335" y2="280" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/>
-                    <line x1="220" y1="350" x2="230" y2="295" stroke="#4a8e3e" stroke-width="4"/>
-                    <line x1="280" y1="350" x2="270" y2="295" stroke="#4a8e3e" stroke-width="4"/>
-                    <path d="M195,320 Q175,300 180,280 Q195,290 200,310Z" fill="#4a8e3e" opacity="0.9"/>
-                    <path d="M305,325 Q325,305 320,285 Q305,295 300,315Z" fill="#4a8e3e" opacity="0.9"/>
-                    <ellipse cx="250" cy="245" rx="22" ry="35" fill="url(#tulipPink1)" transform="rotate(0,250,245)"/>
-                    <ellipse cx="250" cy="250" rx="18" ry="30" fill="#ff88aa" opacity="0.5"/>
-                    <ellipse cx="200" cy="255" rx="20" ry="32" fill="url(#tulipPink2)" transform="rotate(-10,200,255)"/>
-                    <ellipse cx="300" cy="260" rx="20" ry="33" fill="url(#tulipPink3)" transform="rotate(8,300,260)"/>
-                    <ellipse cx="165" cy="268" rx="18" ry="28" fill="url(#tulipPink1)" transform="rotate(-15,165,268)"/>
-                    <ellipse cx="335" cy="265" rx="18" ry="29" fill="url(#tulipPink2)" transform="rotate(12,335,265)"/>
-                    <ellipse cx="230" cy="238" rx="16" ry="26" fill="url(#tulipPink3)" transform="rotate(5,230,238)"/>
-                    <ellipse cx="270" cy="242" rx="16" ry="27" fill="url(#tulipPink1)" transform="rotate(-3,270,242)"/>
-                    <path d="M200,350 Q220,340 250,350 Q280,340 300,350 Q280,365 250,365 Q220,365 200,350Z" fill="#ff80a8" opacity="0.95"/>
-                    <path d="M250,350 L250,370 M250,370 L235,385 M250,370 L265,385" stroke="#ff80a8" stroke-width="4" fill="none" stroke-linecap="round"/>
-                    <circle cx="180" cy="225" r="3" fill="#fff0f5" opacity="0.9"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.5s" repeatCount="indefinite"/></circle>
-                    <circle cx="320" cy="230" r="2.5" fill="#fff0f5" opacity="0.8"><animate attributeName="opacity" values="0.8;0.1;0.8" dur="2s" repeatCount="indefinite"/></circle>
-                    <circle cx="250" cy="200" r="2" fill="#ffcce0" opacity="1"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle>
-                    <text x="250" y="420" text-anchor="middle" fill="#ffbfd5" font-family="'Dancing Script', cursive" font-size="28" font-weight="bold">Con todo mi amor, Angel 🌷</text>
-                </svg>
-            </div>
-            <button class="close-bouquet" onclick="closeBouquet()">Cerrar</button>
-        </div>
-    </div>
+    <div id="bouquetModal" class="bouquet-modal"><div class="bouquet-card"><div class="bouquet-title">🌷 Para ti, mi amor 🌷</div><div class="bouquet-sub">Tulipanes rosados que florecen por ti</div><div class="bouquet-svg"><svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="tulipPink1" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ff9ebf"/><stop offset="100%" stop-color="#e64b6c"/></linearGradient><linearGradient id="tulipPink2" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ffb8d0"/><stop offset="100%" stop-color="#cc3b5e"/></linearGradient><linearGradient id="tulipPink3" x1="0%" y1="0%" x2="0%" y2="100%"><stop offset="0%" stop-color="#ff7a9e"/><stop offset="100%" stop-color="#b8003a"/></linearGradient></defs><line x1="200" y1="350" x2="200" y2="270" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/><line x1="250" y1="350" x2="250" y2="260" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/><line x1="300" y1="350" x2="300" y2="275" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/><line x1="165" y1="350" x2="165" y2="280" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/><line x1="335" y1="350" x2="335" y2="280" stroke="#5a9e4e" stroke-width="5" stroke-linecap="round"/><line x1="220" y1="350" x2="230" y2="295" stroke="#4a8e3e" stroke-width="4"/><line x1="280" y1="350" x2="270" y2="295" stroke="#4a8e3e" stroke-width="4"/><path d="M195,320 Q175,300 180,280 Q195,290 200,310Z" fill="#4a8e3e" opacity="0.9"/><path d="M305,325 Q325,305 320,285 Q305,295 300,315Z" fill="#4a8e3e" opacity="0.9"/><ellipse cx="250" cy="245" rx="22" ry="35" fill="url(#tulipPink1)" transform="rotate(0,250,245)"/><ellipse cx="250" cy="250" rx="18" ry="30" fill="#ff88aa" opacity="0.5"/><ellipse cx="200" cy="255" rx="20" ry="32" fill="url(#tulipPink2)" transform="rotate(-10,200,255)"/><ellipse cx="300" cy="260" rx="20" ry="33" fill="url(#tulipPink3)" transform="rotate(8,300,260)"/><ellipse cx="165" cy="268" rx="18" ry="28" fill="url(#tulipPink1)" transform="rotate(-15,165,268)"/><ellipse cx="335" cy="265" rx="18" ry="29" fill="url(#tulipPink2)" transform="rotate(12,335,265)"/><ellipse cx="230" cy="238" rx="16" ry="26" fill="url(#tulipPink3)" transform="rotate(5,230,238)"/><ellipse cx="270" cy="242" rx="16" ry="27" fill="url(#tulipPink1)" transform="rotate(-3,270,242)"/><path d="M200,350 Q220,340 250,350 Q280,340 300,350 Q280,365 250,365 Q220,365 200,350Z" fill="#ff80a8" opacity="0.95"/><path d="M250,350 L250,370 M250,370 L235,385 M250,370 L265,385" stroke="#ff80a8" stroke-width="4" fill="none" stroke-linecap="round"/><circle cx="180" cy="225" r="3" fill="#fff0f5" opacity="0.9"><animate attributeName="opacity" values="0.9;0.2;0.9" dur="1.5s" repeatCount="indefinite"/></circle><circle cx="320" cy="230" r="2.5" fill="#fff0f5" opacity="0.8"><animate attributeName="opacity" values="0.8;0.1;0.8" dur="2s" repeatCount="indefinite"/></circle><circle cx="250" cy="200" r="2" fill="#ffcce0" opacity="1"><animate attributeName="opacity" values="1;0.3;1" dur="1.8s" repeatCount="indefinite"/></circle><text x="250" y="420" text-anchor="middle" fill="#ffbfd5" font-family="'Dancing Script', cursive" font-size="28" font-weight="bold">Con todo mi amor, Angel 🌷</text></svg></div><button class="close-bouquet" onclick="closeBouquet()">Cerrar</button></div></div>
 
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <img id="lightboxImg" src="">
-    </div>
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()"><img id="lightboxImg" src=""></div>
 
-    <!-- AUDIO: Uso de una canción de ejemplo libre de derechos (para garantizar que funcione) -->
-    <!-- Puedes reemplazar la src por "Luciano_Pereyra_-_Como_Tu.mp3" cuando esté disponible -->
+    <!-- AUDIO: Se_detiene_el_reloj.mp3 (sin espacios) -->
     <audio id="bgMusic" loop preload="auto">
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+        <source src="Se_detiene_el_reloj.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
-    <div class="music-btn" id="musicBtn">🎵 Activar música romántica</div>
+    <div class="music-btn" id="musicBtn">🎵 Activar "Se detiene el reloj"</div>
 
     <script>
         (function(){
-            // CANVAS DE FONDO (funcionalidad completa)
+            // CANVAS DE FONDO (resumido para brevedad, pero completo)
             const canvas = document.getElementById('bgc');
             const ctx = canvas.getContext('2d');
             let W, H;
@@ -334,22 +244,29 @@
                 }, 470);
             }
 
-            // ---------- MÚSICA: versión que FUNCIONA 100% (audio externo) ----------
+            // ---------- MÚSICA (Se_detiene_el_reloj) ----------
             const audio = document.getElementById('bgMusic');
             const musicBtn = document.getElementById('musicBtn');
             let musicPlaying = false;
 
+            // Verificar si el audio se carga correctamente
+            audio.addEventListener('error', function(e) {
+                console.error("Error cargando el archivo de música. ¿Está el archivo 'Se_detiene_el_reloj.mp3' en la misma carpeta?");
+                musicBtn.innerHTML = '🔇 Error: no se encuentra el MP3';
+                musicBtn.style.background = '#aa3355';
+            });
+
             function playMusic() {
                 audio.play().then(() => {
                     musicPlaying = true;
-                    musicBtn.innerHTML = '🎵 Música sonando ♪';
+                    musicBtn.innerHTML = '🎵 "Se detiene el reloj" sonando ♪';
                     musicBtn.style.background = '#ff3060';
                     musicBtn.style.color = 'white';
                 }).catch(e => {
                     console.error("Error al reproducir:", e);
-                    musicBtn.innerHTML = '🔇 Haz clic de nuevo';
+                    musicBtn.innerHTML = '🔇 Haz clic de nuevo (interacción requerida)';
                     setTimeout(() => {
-                        if (!musicPlaying) musicBtn.innerHTML = '🎵 Activar música romántica';
+                        if (!musicPlaying) musicBtn.innerHTML = '🎵 Activar "Se detiene el reloj"';
                     }, 2000);
                 });
             }
@@ -358,7 +275,7 @@
                 if (musicPlaying) {
                     audio.pause();
                     musicPlaying = false;
-                    musicBtn.innerHTML = '🎵 Activar música romántica';
+                    musicBtn.innerHTML = '🎵 Activar "Se detiene el reloj"';
                     musicBtn.style.background = 'rgba(0,0,0,0.7)';
                     musicBtn.style.color = '#ffbfcc';
                 } else {
@@ -366,7 +283,7 @@
                 }
             });
 
-            // GALERÍA DE 10 FOTOS (mismo código que antes)
+            // GALERÍA DE 10 FOTOS
             const MAX_PHOTOS = 10;
             const gridContainer = document.getElementById('grid');
             let fileInputs = [];
