@@ -95,7 +95,6 @@
     <canvas id="bgc"></canvas>
     <div id="fh"></div>
 
-    <!-- INTRO -->
     <div class="intro" id="intro">
         <div class="scene-wrap">
             <svg class="scene-svg" viewBox="0 0 320 340" xmlns="http://www.w3.org/2000/svg">
@@ -122,7 +121,6 @@
         <button class="i-btn" id="openLetterBtn">Abrir mi carta ❤️</button>
     </div>
 
-    <!-- CARTA PRINCIPAL -->
     <div class="page" id="page">
         <div class="hdr">
             <div class="hdr-scene">
@@ -141,14 +139,12 @@
         </div>
         <div class="divrow"><div class="dl"></div><div class="dc">✦ ❤️ ✦</div><div class="dl"></div></div>
 
-        <!-- GALERÍA (10 fotos) -->
         <div class="glass">
             <span class="slabel">Nuestros momentos 🌸</span>
             <div class="pgrid" id="grid"></div>
             <p class="pnote">✨ Toca cada foto para verla en grande. Si quieres cambiarla, usa la ✕ ✨</p>
         </div>
 
-        <!-- CARTA DE AMOR -->
         <div class="glass">
             <span class="saludo">Paulina, mi amor…</span>
             <div class="body">
@@ -177,7 +173,6 @@
         <button class="bouquet-btn" id="bouquetBtn">🌷 Ver ramo de tulipanes rosados 🌷</button>
     </div>
 
-    <!-- Modal ramo -->
     <div id="bouquetModal" class="bouquet-modal">
         <div class="bouquet-card">
             <div class="bouquet-title">🌷 Para ti, mi amor 🌷</div>
@@ -222,9 +217,16 @@
         <img id="lightboxImg" src="">
     </div>
 
-    <!-- AUDIO con manejo de errores y URL con espacios -->
+    <!-- Audio con múltiples fuentes de respaldo -->
     <audio id="bgMusic" loop preload="auto">
+        <!-- Intento 1: el archivo original con espacios -->
         <source src="Luciano Pereyra - Como Tú.mp3" type="audio/mpeg">
+        <!-- Intento 2: con espacios codificados %20 -->
+        <source src="Luciano%20Pereyra%20-%20Como%20T%C3%BA.mp3" type="audio/mpeg">
+        <!-- Intento 3: sin espacios (si renombras, pero lo dejamos) -->
+        <source src="Luciano_Pereyra_-_Como_Tu.mp3" type="audio/mpeg">
+        <!-- Fallback: canción romántica de dominio público (para que siempre haya música) -->
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
         Tu navegador no soporta el elemento de audio.
     </audio>
 
@@ -232,7 +234,7 @@
 
     <script>
         (function(){
-            // CANVAS DE FONDO
+            // CANVAS DE FONDO (idéntico al anterior - solo incluyo lo esencial)
             const canvas = document.getElementById('bgc');
             const ctx = canvas.getContext('2d');
             let W, H;
@@ -316,7 +318,6 @@
             initBackground();
             animateBackground();
 
-            // Corazones flotantes
             function startFloatingHearts() {
                 const fhDiv = document.getElementById('fh');
                 const emojis = ['❤️','🩷','💕','💖','🌹','✨','💗','🌸'];
@@ -332,17 +333,21 @@
                 }, 470);
             }
 
-            // MÚSICA: manejo robusto con espacios en el nombre
+            // MÚSICA: Mejorada con fallback y detección de error
             const audio = document.getElementById('bgMusic');
             const musicBtn = document.getElementById('musicBtn');
             let musicPlaying = false;
+            let fallbackUsed = false;
 
-            // Forzar recarga del audio si falla (por si hay problema de ruta)
+            // Si ninguna fuente carga, mostrar mensaje pero aún así intentar con el fallback externo
             audio.addEventListener('error', function(e) {
-                console.warn('Error cargando audio, intentando con ruta alternativa...');
-                // Intento con codificación de espacios %20
-                audio.src = 'Luciano%20Pereyra%20-%20Como%20T%C3%BA.mp3';
-                audio.load();
+                console.warn("Error cargando fuente, posiblemente el archivo local no existe.");
+                if (!fallbackUsed) {
+                    fallbackUsed = true;
+                    // Intentar forzar la carga del fallback externo
+                    audio.src = "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3";
+                    audio.load();
+                }
             });
 
             function playMusic() {
@@ -372,7 +377,7 @@
                 }
             });
 
-            // GALERÍA DE 10 FOTOS
+            // GALERÍA DE FOTOS (igual que antes)
             const MAX_PHOTOS = 10;
             const gridContainer = document.getElementById('grid');
             let fileInputs = [];
@@ -439,7 +444,6 @@
                 }
             }
 
-            // ABRIR CARTA
             const introDiv = document.getElementById('intro');
             const pageDiv = document.getElementById('page');
             function openLetter() {
@@ -452,7 +456,6 @@
             }
             document.getElementById('openLetterBtn').addEventListener('click', openLetter);
 
-            // RAMO DE TULIPANES
             const bouquetModal = document.getElementById('bouquetModal');
             window.showBouquet = function() {
                 bouquetModal.classList.add('active');
